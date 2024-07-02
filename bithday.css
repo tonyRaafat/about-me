@@ -1,0 +1,68 @@
+
+#birthday .birthday-content {
+    display: grid;
+}
+
+
+#birthday .birthday-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    animation: hideAnimation 0s ease-in 5s;
+    animation-fill-mode: forwards;
+}
+
+#birthday .message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    animation: showAnimation 0s ease-in 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+    to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes showAnimation {
+    to {
+        visibility: visible;
+    }
+}
+
+#birthday input[type="checkbox"]:checked~.message-container {
+    opacity: 1;
+}
+
+.message-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-container textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.message-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-container button:hover {
+    background-color: #ff6347;
+}
